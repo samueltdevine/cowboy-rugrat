@@ -1,10 +1,13 @@
 import React, { lazy, Suspense } from "react";
+import classNames from 'classnames';
+import head from './images/head-clipped.png'
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   NavLink,
 } from "react-router-dom";
+import animations from "./Animations.module.css"
 import styles from "./App.module.css";
 const routes = [
   {
@@ -99,6 +102,9 @@ const App = () => {
           </Switch>
         </Suspense>
       </Router>
+      <div className={styles.head}>
+        <img className={classNames(styles.headImg, animations.headAnimation )} src={head} alt={"head"}></img>
+      </div>
     </div>
   );
 };

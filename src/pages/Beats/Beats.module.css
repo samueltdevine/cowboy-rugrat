@@ -1,3 +1,7 @@
+.scWrapper{
+    display: flex;
+    justify-content: center;
+}
 .iframeDiv {
   font-size: 10px;
   color: #cccccc;

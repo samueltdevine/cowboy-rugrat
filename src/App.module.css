@@ -1,21 +1,38 @@
+:root{
+  background-color: #E8E17D;
+  overflow: hidden;
+}
 .siteWrap {
-  background-color: #e8e17d;
-  border: dashed 3px tomato;
+  position: relative;
+  border-radius: 20px;
+  background-color: rgb(228, 95, 90);
+  height: calc(100vh - 60px + 3px);
+  margin: 30px;
+  margin-top: 7rem;
+  margin-bottom: 0px;
+  height: 100vh;
+  box-shadow: 5px 5px 5px rgba(24, 24, 24, 0.233);
 
-  height: calc(100vh - 30px + 3px);
-  padding: 10px;
 }
 .headText {
+  transform: translate(0%, -25%);
   display: flex;
-  border: solid 3px white;
+  border: dashed 3px cornflowerblue;
+
+  border-radius: 10px;
+  background-color: rgba(157, 233, 252, 0.993);
   padding: 10px;
+  margin-top: 20px;
+  box-shadow: 5px 5px 5px rgba(24, 24, 24, 0.233);
+
   /* text-transform: uppercase; */
-  color: royalblue;
+  color: midnightblue;
+  
 }
 
 .nav {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .navLinks {
@@ -29,9 +46,10 @@
 }
 
 .navlink {
+  margin: 5px;
   display: flex;
   justify-content: center;
-  border: solid 3px white;
+  border: solid 3px #E8E17D;
   padding: 10px;
   text-transform: uppercase;
   font-weight: 700;
@@ -52,18 +70,36 @@
 }
 
 .navlink:hover {
-  transform: translate(0px, -10px);
+  transform: translate(0px, -15px);
 }
 .active.navlink {
-  transform: translate(-0px, -10px);
-  background-color: crimson;
+  transform: translate(-0px, -15px);
+  background-color: rgb(118, 166, 255);
   color: white;
+  border: solid 3px mintcream;
+
 }
 
 .navlink {
-  color: crimson;
+  color:midnightblue;
 
   text-decoration: none;
 }
 .navlink a:visited {
+}
+
+.head{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+position: absolute;
+top: -3%;
+width: 50%;
+}
+
+.headImg{
+  z-index: -2;
+  position: absolute;
+  left: 80%;
+  width: 40%;
 }
