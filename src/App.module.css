@@ -1,0 +1,22 @@
+.headText {
+}
+.navlinks {
+  width: 80vw;
+  margin: auto;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+
+.navlink {
+  list-style: none;
+}
+
+.navlink a {
+  text-decoration: none;
+}
+.navlink a:visited {
+}

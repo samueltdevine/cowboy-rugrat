@@ -1,58 +1,54 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import React, { lazy, Suspense } from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import styles from "./App.module.css";
+const routes = [
+  {
+    href: "/",
+    name: "Home",
+    isInNavBar: true,
+    Component: lazy(() => import("pages/Home")),
+  },
+  { href: "/music", name: "music", isInNavBar: true },
+  { href: "/ig", name: "instagram", isInNavBar: true },
+  { href: "/beats", name: "beats", isInNavBar: true },
+  { href: "/videos", name: "videos", isInNavBar: true },
+  {
+    href: "/the-trampoline",
+    name: "the trampoline",
+    isInNavBar: false,
+    Component: lazy(() => import("pages/TheTrampoline")),
+  },
+];
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
-  );
-}
+const App = () => (
+  <Router>
+    <header>
+      <h1 className={styles.headText}>
+        <span>cowboy</span>
+        <span>rugrat</span>
+      </h1>
+      <nav>
+        <ul className={styles.navlinks}>
+          {routes
+            .filter(({ isInNavBar }) => isInNavBar)
+            .map(({ href, name }) => (
+              <li className={styles.navlink} key={href}>
+                <Link to={href}>{name}</Link>
+              </li>
+            ))}
+        </ul>
+      </nav>
+    </header>
+    <Suspense fallback={<p>Loading...</p>}>
+      <Switch>
+        {routes.map(({ Component = () => <></>, href }) => (
+          <Route exact key={href} path={href}>
+            <Component />
+          </Route>
+        ))}
+      </Switch>
+    </Suspense>
+  </Router>
+);
 
 export default App;
