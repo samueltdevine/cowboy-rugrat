@@ -1,6 +1,13 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+  useLocation,
+} from "react-router-dom";
 import styles from "./App.module.css";
+import classNames from "classnames";
 const routes = [
   {
     href: "/",
@@ -20,35 +27,50 @@ const routes = [
   },
 ];
 
-const App = () => (
-  <Router>
-    <header>
-      <h1 className={styles.headText}>
-        <span>cowboy</span>
-        <span>rugrat</span>
-      </h1>
-      <nav>
-        <ul className={styles.navlinks}>
-          {routes
-            .filter(({ isInNavBar }) => isInNavBar)
-            .map(({ href, name }) => (
-              <li className={styles.navlink} key={href}>
-                <Link to={href}>{name}</Link>
-              </li>
+const App = () => {
+  return (
+    <div className={styles.siteWrap}>
+      <Router>
+        <header>
+          <h1 className={styles.headText}>
+            <span role="img" aria-label="cowboy">
+              🤠
+            </span>
+            <span>cowboy</span>
+            <span>rugrat</span>
+            <span role="img" aria-label="rat">
+              👶
+            </span>
+          </h1>
+          <nav className={styles.nav}>
+            <ul className={styles.navLinks}>
+              {routes
+                .filter(({ isInNavBar }) => isInNavBar)
+                .map(({ href, name }) => (
+                  <NavLink
+                    exact
+                    to={href}
+                    className={styles.navlink}
+                    activeClassName={styles.active}
+                  >
+                    <li key={href}>{name}</li>
+                  </NavLink>
+                ))}
+            </ul>
+          </nav>
+        </header>
+        <Suspense fallback={<p>Loading...</p>}>
+          <Switch>
+            {routes.map(({ Component = () => <></>, href }) => (
+              <Route exact key={href} path={href}>
+                <Component />
+              </Route>
             ))}
-        </ul>
-      </nav>
-    </header>
-    <Suspense fallback={<p>Loading...</p>}>
-      <Switch>
-        {routes.map(({ Component = () => <></>, href }) => (
-          <Route exact key={href} path={href}>
-            <Component />
-          </Route>
-        ))}
-      </Switch>
-    </Suspense>
-  </Router>
-);
+          </Switch>
+        </Suspense>
+      </Router>
+    </div>
+  );
+};
 
 export default App;
