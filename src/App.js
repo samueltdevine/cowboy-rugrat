@@ -4,25 +4,46 @@ import {
   Switch,
   Route,
   NavLink,
-  useLocation,
 } from "react-router-dom";
 import styles from "./App.module.css";
-import classNames from "classnames";
 const routes = [
   {
     href: "/",
     name: "Home",
     isInNavBar: true,
+    isExternal: false,
     Component: lazy(() => import("pages/Home")),
   },
-  { href: "/music", name: "music", isInNavBar: true },
-  { href: "/ig", name: "instagram", isInNavBar: true },
-  { href: "/beats", name: "beats", isInNavBar: true },
-  { href: "/videos", name: "videos", isInNavBar: true },
+  {
+    href: "spotify:artist:30yAH7N8EdCazhRu0xxTEX",
+    name: "music",
+    isInNavBar: true,
+    isExternal: true,
+  },
+  {
+    href: "https://www.instagram.com/cowboy_rugrat/",
+    name: "instagram",
+    isInNavBar: true,
+    isExternal: true,
+  },
+  {
+    href: "/beats",
+    name: "beats",
+    isInNavBar: true,
+    isExternal: false,
+    Component: lazy (() => import("pages/Beats"))
+  },
+  // {
+  //   href: "/videos",
+  //   name: "videos",
+  //   isInNavBar: true,
+  //   isExternal: false,
+  // },
   {
     href: "/the-trampoline",
     name: "the trampoline",
     isInNavBar: false,
+    isExternal: false,
     Component: lazy(() => import("pages/TheTrampoline")),
   },
 ];
@@ -46,16 +67,26 @@ const App = () => {
             <ul className={styles.navLinks}>
               {routes
                 .filter(({ isInNavBar }) => isInNavBar)
-                .map(({ href, name }) => (
-                  <NavLink
-                    exact
-                    to={href}
-                    className={styles.navlink}
-                    activeClassName={styles.active}
-                  >
-                    <li key={href}>{name}</li>
-                  </NavLink>
-                ))}
+                .map(({ href, name, isExternal }) => {
+                  if (isExternal) {
+                    return (
+                      <a className={styles.navlink} href={href} key={href}>
+                        <li>{name}</li>
+                      </a>
+                    );
+                  }
+                  return (
+                    <NavLink
+                      exact
+                      to={href}
+                      className={styles.navlink}
+                      activeClassName={styles.active}
+                      key={href}
+                    >
+                      <li>{name}</li>
+                    </NavLink>
+                  );
+                })}
             </ul>
           </nav>
         </header>
