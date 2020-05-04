@@ -47,7 +47,6 @@ const routes = [
     Component: lazy(() => import("pages/TheTrampoline")),
   },
 ];
-
 const App = () => {
   return (
     <div className={styles.siteWrap}>
