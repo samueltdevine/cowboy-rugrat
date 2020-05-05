@@ -55,6 +55,7 @@ const App = () => {
     <div className={styles.siteWrap}>
       <Router>
         <header>
+          <title>Cowboy Rugrat</title>
           <h1 className={styles.headText}>
             <span role="img" aria-label="cowboy">
               🤠

@@ -21,7 +21,7 @@
     transform:  translate(0px,0px)  ;
   }
   51% {
-    transform:  translate(0px,-26px)  ;
+    transform:  translate(0px,-3vw)  ;
   }
   100% {
     transform:  translate(0px,0px)  ;
@@ -33,7 +33,7 @@
     -moz-transform:  translate(0px,0px)  ;
   }
   51% {
-    -moz-transform:  translate(0px,-26px)  ;
+    -moz-transform:  translate(0px,-3vw)  ;
   }
   100% {
     -moz-transform:  translate(0px,0px)  ;
@@ -45,7 +45,7 @@
     -webkit-transform:  translate(0px,0px)  ;
   }
   51% {
-    -webkit-transform:  translate(0px,-26px)  ;
+    -webkit-transform:  translate(0px,-3vw)  ;
   }
   100% {
     -webkit-transform:  translate(0px,0px)  ;
@@ -57,7 +57,7 @@
     -o-transform:  translate(0px,0px)  ;
   }
   51% {
-    -o-transform:  translate(0px,-26px)  ;
+    -o-transform:  translate(0px,-3vw)  ;
   }
   100% {
     -o-transform:  translate(0px,0px)  ;
@@ -69,7 +69,7 @@
     -ms-transform:  translate(0px,0px)  ;
   }
   51% {
-    -ms-transform:  translate(0px,-26px)  ;
+    -ms-transform:  translate(0px,-3vw)  ;
   }
   100% {
     -ms-transform:  translate(0px,0px)  ;

@@ -1,6 +1,6 @@
 :root{
-  background-color: #E8E17D;
-  overflow: hidden;
+  background-color: #e4fffb;
+  overflow-y: scroll;
 }
 .siteWrap {
   position: relative;
@@ -15,12 +15,14 @@
 
 }
 .headText {
+  font-size: 4vw;
   transform: translate(0%, -25%);
   display: flex;
   border: dashed 3px cornflowerblue;
 
   border-radius: 10px;
   background-color: rgba(157, 233, 252, 0.993);
+
   padding: 10px;
   margin-top: 20px;
   box-shadow: 5px 5px 5px rgba(24, 24, 24, 0.233);
@@ -49,7 +51,10 @@
   margin: 5px;
   display: flex;
   justify-content: center;
-  border: solid 3px #E8E17D;
+  outline: solid 3px #E8E17D;
+  outline-offset: -3px;
+  background-color: #e4fffb;
+
   padding: 10px;
   text-transform: uppercase;
   font-weight: 700;
@@ -70,14 +75,19 @@
 }
 
 .navlink:hover {
-  transform: translate(0px, -15px);
+  transform: translate(0px, -10px);
 }
 .active.navlink {
-  transform: translate(-0px, -15px);
+  transform: translate(-0px, -10px);
   background-color: rgb(118, 166, 255);
   color: white;
-  border: solid 3px mintcream;
+  outline: solid 20px rgb(118, 166, 255);
+  outline-offset: -20px;
 
+}
+
+.active.navlink li{ 
+  z-index: 2;
 }
 
 .navlink {
@@ -92,14 +102,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-position: absolute;
-top: -3%;
-width: 50%;
+  position: absolute;
+  top: -4%;
+  width: 50vw;
 }
 
 .headImg{
   z-index: -2;
   position: absolute;
-  left: 80%;
-  width: 40%;
+  left: 45%;
+  width: 100%;
 }
