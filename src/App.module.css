@@ -6,13 +6,13 @@
   position: relative;
   border-radius: 20px;
   background-color: rgb(228, 95, 90);
-  height: calc(100vh - 60px + 3px);
+  height: max-content;
   margin: 30px;
   margin-top: 7rem;
+  padding-bottom: 60px;
   margin-bottom: 0px;
-  height: 100vh;
   box-shadow: 5px 5px 5px rgba(24, 24, 24, 0.233);
-
+  
 }
 .headText {
   font-size: 4vw;
