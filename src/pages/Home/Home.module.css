@@ -15,3 +15,12 @@
 .featuredVideo iframe{
   box-shadow: 0px 0px 10px rgba(24, 24, 24, 0.493);
 }
+
+@media only screen and (max-width: 600px) {
+  .featuredVideo {
+  border: solid 6px rgba(157, 233, 252, 0.993);
+
+  width: calc(70vw - 10px);
+
+  }
+}

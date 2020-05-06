@@ -1,10 +1,13 @@
 :root{
+  overflow-x: hidden;
   background-color: #e4fffb;
   overflow-y: scroll;
 }
 .siteWrap {
+  outline: 12px solid #E8E17D;
+  outline-offset: -12px;
   position: relative;
-  border-radius: 20px;
+  /* border-radius: 20px; */
   background-color: rgb(228, 95, 90);
   height: max-content;
   margin: 30px;
@@ -20,7 +23,6 @@
   display: flex;
   border: dashed 3px cornflowerblue;
 
-  border-radius: 10px;
   background-color: rgba(157, 233, 252, 0.993);
 
   padding: 10px;
@@ -112,4 +114,46 @@
   position: absolute;
   left: 45%;
   width: 100%;
+}
+
+.shoes{
+  display: flex;
+  justify-content: center;
+  }
+  
+.shoesImg{
+  width: 50%;
+  z-index: -1;
+  }
+
+.trampoline{
+position: relative;
+bottom: 60;
+display: flex;
+justify-content: center;
+}
+
+.trampolineImg{
+width: 50%;
+position: absolute;
+z-index: -2;
+}
+
+@media only screen and (max-width: 600px) {
+  :root{
+    overflow-x: hidden;
+  }
+ .siteWrap{
+   width: 90vw;
+  outline: 6px solid #E8E17D;
+  outline-offset: -6px;
+  margin-left: 5vw;
+  margin-right: 0px;
+ }
+ .navLinks{
+   width: 90%;
+ }
+ .navlink{
+   margin: 2px;
+ }
 }
