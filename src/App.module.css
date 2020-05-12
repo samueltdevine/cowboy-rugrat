@@ -3,6 +3,9 @@
   background-color: #e4fffb;
   overflow-y: scroll;
 }
+a{
+  text-decoration: none;
+}
 .siteWrap {
   outline: 12px solid #E8E17D;
   outline-offset: -12px;
@@ -97,8 +100,7 @@
 
   text-decoration: none;
 }
-.navlink a:visited {
-}
+
 
 .head{
   display: flex;

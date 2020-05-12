@@ -20,15 +20,24 @@ const routes = [
     Component: lazy(() => import("pages/Home")),
   },
   {
-    href: "spotify:artist:30yAH7N8EdCazhRu0xxTEX",
-    name: "music",
+    // spotify:artist:30yAH7N8EdCazhRu0xxTEX
+    href: "/music",
+    name: "Music",
     isInNavBar: true,
-    isExternal: true,
+    isExternal: false,
+    Component: lazy(() => import("pages/Music")),
+  },
+  {
+    href: "/videos",
+    name: "videos",
+    isInNavBar: true,
+    isExternal: false,
+    Component: lazy(() => import("pages/Videos")),
   },
   {
     href: "https://www.instagram.com/cowboy_rugrat/",
     name: "instagram",
-    isInNavBar: true,
+    isInNavBar: false,
     isExternal: true,
   },
   {
@@ -38,12 +47,6 @@ const routes = [
     isExternal: false,
     Component: lazy(() => import("pages/Beats")),
   },
-  // {
-  //   href: "/videos",
-  //   name: "videos",
-  //   isInNavBar: true,
-  //   isExternal: false,
-  // },
   {
     href: "/the-trampoline",
     name: "the trampoline",
